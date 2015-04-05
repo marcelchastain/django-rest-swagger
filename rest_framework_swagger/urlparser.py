@@ -138,6 +138,9 @@ class UrlParser(object):
                 if endpoint_data is None:
                     continue
 
+                if pattern.name in exclude_namespaces:
+                    continue
+
                 pattern_list.append(endpoint_data)
 
             elif isinstance(pattern, RegexURLResolver):
